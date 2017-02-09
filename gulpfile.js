@@ -3,7 +3,8 @@ var gulp = require ( "gulp" ),
     sass = require( "gulp-sass" ),
     autoprefixer = require( "gulp-autoprefixer" ),
     cssp = require( "gulp-csso" ),
-    pug = require( "gulp-pug" );
+    pug = require( "gulp-pug" ),
+    babel = require( "gulp-babel" );
 
 // --- Task for images
 
@@ -32,6 +33,12 @@ gulp.task( "pug", function() {
 });
 
 // --- Task for js
+
+gulp.task( "js", function() {
+    gulp.src( "src/src/**/*.js" )
+        .pipe( babel() )
+        .pipe( gulp.dest( "assets/js" ) );
+} );
 
 // --- Task for tasks
 
