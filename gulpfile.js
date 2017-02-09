@@ -40,6 +40,16 @@ gulp.task( "js", function() {
         .pipe( gulp.dest( "assets/js" ) );
 } );
 
-// --- Task for tasks
+// --- Watch tasks
+
+gulp.task( "watch", function() {
+    gulp.watch( "src/images/**", ["images"] );
+    gulp.watch( "src/sass/**/*.scss", ["css"] );
+    gulp.watch( "src/pug/**/*.scss", ["html"] );
+    gulp.watch( "src/js/**/*.scss", ["js"] );
+} );
 
 // --- Aliases
+
+gulp.task("default", [ "images", "html", "css", "js" ]);
+gulp.task( "work", ["default", "watch"] );
