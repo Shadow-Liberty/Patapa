@@ -28,8 +28,8 @@ gulp.task( "css", function() {
 gulp.task( "pug", function() {
     gulp.src( "src/pug/**/.pug" )
     .pipe( pug( {} ) )
-    .pipe( gulp.dest(".") )
-})
+    .pipe( gulp.dest(".") );
+});
 
 // --- Task for js
 
